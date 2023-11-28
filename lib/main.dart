@@ -1,4 +1,4 @@
-import 'package:chit_chat/Theams/colors/colors.dart';
+import 'package:chit_chat/Theme/colors/colors.dart';
 import 'package:flutter/material.dart';
 
 void main() {
