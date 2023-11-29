@@ -7,3 +7,5 @@ const vividNavy = Color(0xff123CFF); // accent color
 const baseNavy = Color(0xff91A5FF); // base color
 const onBackground = Colors.white;
 const darkGrey = Color(0xff485B6F);
+const white = Colors.white;
+const black = Colors.black;
