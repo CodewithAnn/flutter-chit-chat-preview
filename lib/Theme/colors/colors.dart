@@ -10,3 +10,18 @@ const onBackground = Colors.white;
 const darkGrey = Color(0xff485B6F);
 const white = Colors.white;
 const black = Colors.black;
+/***
+  Colors.white.withOpacity(0.07),
+  Colors.white.withOpacity(0.07)
+
+  // gradient blur
+  Colors.white.withOpacity(0.40),
+  Colors.white.withOpacity(0.10),
+  // liner
+  lightNavy,
+  lightBlue,
+  vividNavy,
+  baseNavy,
+  blueWhite,
+
+ */
