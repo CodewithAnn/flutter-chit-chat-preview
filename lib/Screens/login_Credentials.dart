@@ -19,6 +19,7 @@ class LoginScreenCredentials extends StatelessWidget {
               padding: const EdgeInsets.symmetric(
                 horizontal: 20,
               ),
+              // Morphism login background
               child: GlassContainer(
                 height: 500,
                 width: double.maxFinite,
@@ -49,42 +50,56 @@ class LoginScreenCredentials extends StatelessWidget {
                 child: loginCredential(),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 20,
               height: 30,
             ),
-            Container(
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const SizedBox(
-                    width: 15,
-                    height: 50,
-                  ),
-                  DefaultTextStyle(
-                    style: const TextStyle(
-                        fontFamily: "Poppins Regular", fontSize: 20),
-                    child: AnimatedTextKit(
-                      pause: Duration(milliseconds: 250),
-                      animatedTexts: [
-                        RotateAnimatedText("Login"),
-                        RotateAnimatedText("Believe in"),
-                        RotateAnimatedText("Show Them"),
+            Stack(
+              children: [
+                Container(
+                  height: 70,
+                  width: 300,
+                  color: Colors.transparent,
+                  child: Center(
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const SizedBox(
+                          width: 15,
+                          height: 90,
+                        ),
+                        DefaultTextStyle(
+                          style: const TextStyle(
+                              fontFamily: "Poppins Regular", fontSize: 20),
+                          child: AnimatedTextKit(
+                            pause: Duration(milliseconds: 200),
+                            animatedTexts: [
+                              RotateAnimatedText(
+                                "Login",
+                                rotateOut: false,
+                              ),
+                              RotateAnimatedText("Believe in",
+                                  rotateOut: false),
+                              RotateAnimatedText("Show Them", rotateOut: false),
+                            ],
+                            repeatForever: false,
+                            totalRepeatCount: 2,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 15,
+                          height: 50,
+                        ),
+                        const Text(
+                          "YourSelf",
+                          style: TextStyle(fontSize: 24),
+                        ),
                       ],
-                      repeatForever: true,
                     ),
                   ),
-                  const SizedBox(
-                    width: 15,
-                    height: 50,
-                  ),
-                  const Text(
-                    "YourSelf",
-                    style: TextStyle(fontSize: 24),
-                  ),
-                ],
-              ),
-            ),
+                )
+              ],
+            )
           ],
         ),
       ),
@@ -92,7 +107,7 @@ class LoginScreenCredentials extends StatelessWidget {
   }
 }
 
-// login Credentials 
+// login Credentials
 Widget loginCredential() {
   return Center(
     child: Column(
@@ -131,6 +146,7 @@ Widget loginCredential() {
         const SizedBox(
           height: 40,
         ),
+        //Account Create
         ElevatedButton.icon(
           onPressed: () {},
           icon: Icon(Icons.add),
