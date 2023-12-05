@@ -1,14 +1,16 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:chit_chat/Screens/signup_Screen.dart';
 import 'package:chit_chat/Theme/colors/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
 
-import 'package:go_router/go_router.dart';
+class NewAccount extends StatefulWidget {
+  const NewAccount({super.key});
 
-class LoginScreenCredentials extends StatelessWidget {
-  const LoginScreenCredentials({super.key});
+  @override
+  State<NewAccount> createState() => _NewAccountState();
+}
 
+class _NewAccountState extends State<NewAccount> {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -50,7 +52,7 @@ class LoginScreenCredentials extends StatelessWidget {
                 elevation: 200,
                 borderRadius: BorderRadius.circular(32),
                 borderWidth: 2,
-                child: loginCredential(context),
+                child: _newAccountCredential(),
               ),
             ),
             const SizedBox(
@@ -110,9 +112,8 @@ class LoginScreenCredentials extends StatelessWidget {
   }
 }
 
-// login Credentials
-@override
-Widget loginCredential(BuildContext context) {
+// New Accounts user details
+Widget _newAccountCredential() {
   return Center(
     child: Column(
       // mainAxisAlignment: MainAxisAlignment.center,
@@ -146,17 +147,15 @@ Widget loginCredential(BuildContext context) {
             ),
           ),
         ),
-        TextButton(onPressed: () {}, child: const Text("Foggot Password?")),
+
         const SizedBox(
           height: 40,
         ),
         //Account Create
         ElevatedButton.icon(
-          onPressed: () {
-            context.go('/create new account');
-          },
-          icon: const Icon(Icons.add),
-          label: const Text("Create New Account"),
+          onPressed: () {},
+          icon: Icon(Icons.add),
+          label: Text("Create New Account"),
           style: const ButtonStyle(
               backgroundColor: MaterialStatePropertyAll(baseNavy),
               foregroundColor: MaterialStatePropertyAll(black)),
@@ -165,10 +164,3 @@ Widget loginCredential(BuildContext context) {
     ),
   );
 }
-
-// void _newAccountRoute() {
-//   final _context = Widget build(BuildContext context){
-
-//     return _xyz = context.go('/create new account');
-//   };
-// }
