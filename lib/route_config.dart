@@ -11,8 +11,9 @@ class AppRoute {
         builder: (BuildContext context, GoRouterState state) => const MyApp(),
       ),
       GoRoute(
-        path: '/create new account',
-        builder: (context, state) => const CreateNewAccount(),
+        path: '/createNewAccount',
+        builder: (BuildContext context, GoRouterState state) =>
+            const CreateNewAccount(),
       ),
     ],
   );

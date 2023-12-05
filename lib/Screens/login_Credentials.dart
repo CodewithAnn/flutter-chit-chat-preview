@@ -153,7 +153,7 @@ Widget loginCredential(BuildContext context) {
         //Account Create
         ElevatedButton.icon(
           onPressed: () {
-            context.go('/create new account');
+            context.go('/createNewAccount');
           },
           icon: const Icon(Icons.add),
           label: const Text("Create New Account"),
