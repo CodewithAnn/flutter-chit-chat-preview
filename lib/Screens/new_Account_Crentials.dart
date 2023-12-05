@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:chit_chat/Theme/colors/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:glass_kit/glass_kit.dart';
 
 class NewAccount extends StatefulWidget {
@@ -15,18 +16,18 @@ class _NewAccountState extends State<NewAccount> {
   Widget build(BuildContext context) {
     return Center(
       child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 150),
+            const SizedBox(height: 70),
             Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: 20,
               ),
               // Morphism login background
               child: GlassContainer(
-                height: 500,
+                height: 700,
                 width: double.maxFinite,
                 gradient: LinearGradient(
                   colors: [
@@ -52,59 +53,13 @@ class _NewAccountState extends State<NewAccount> {
                 elevation: 200,
                 borderRadius: BorderRadius.circular(32),
                 borderWidth: 2,
-                child: _newAccountCredential(),
+                child: _newAccountCredential(context),
               ),
             ),
             const SizedBox(
               width: 20,
               height: 30,
             ),
-            Stack(
-              children: [
-                Container(
-                  height: 70,
-                  width: 300,
-                  color: Colors.transparent,
-                  child: Center(
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const SizedBox(
-                          width: 15,
-                          height: 90,
-                        ),
-                        DefaultTextStyle(
-                          style: const TextStyle(
-                              fontFamily: "Poppins Regular", fontSize: 20),
-                          child: AnimatedTextKit(
-                            pause: Duration(milliseconds: 200),
-                            animatedTexts: [
-                              RotateAnimatedText(
-                                "Login",
-                                rotateOut: false,
-                              ),
-                              RotateAnimatedText("Believe in",
-                                  rotateOut: false),
-                              RotateAnimatedText("Show Them", rotateOut: false),
-                            ],
-                            repeatForever: false,
-                            totalRepeatCount: 2,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 15,
-                          height: 50,
-                        ),
-                        const Text(
-                          "YourSelf",
-                          style: TextStyle(fontSize: 24),
-                        ),
-                      ],
-                    ),
-                  ),
-                )
-              ],
-            )
           ],
         ),
       ),
@@ -113,54 +68,132 @@ class _NewAccountState extends State<NewAccount> {
 }
 
 // New Accounts user details
-Widget _newAccountCredential() {
+Widget _newAccountCredential(BuildContext context) {
   return Center(
-    child: Column(
-      // mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Padding(
-          padding: EdgeInsets.all(12.0),
-          child: Text(
-            "Login",
-            style: TextStyle(fontFamily: "Lato Regular", fontSize: 36),
-          ),
-        ),
-        SizedBox(
-          height: 40,
-        ),
-        Padding(
-          padding: const EdgeInsets.all(14.0),
-          child: TextFormField(
-              decoration: const InputDecoration(
-            prefixIcon: Icon(Icons.mail),
-            hintText: "chitchat@chat.com",
-            fillColor: baseNavy,
-          )),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(14.0),
-          child: TextFormField(
-            decoration: const InputDecoration(
-              prefixIcon: Icon(Icons.lock_outline),
-              hintText: "**********",
-              fillColor: baseNavy,
+    child: SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
+      child: Column(
+        // mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Padding(
+            padding: EdgeInsets.all(12.0),
+            child: Text(
+              "Create New Account",
+              style: TextStyle(fontFamily: "Lato Regular", fontSize: 36),
             ),
           ),
-        ),
+          const SizedBox(
+            height: 40,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(14.0),
+            child: TextFormField(
+                decoration: const InputDecoration(
+              prefixIcon: Icon(
+                FontAwesomeIcons.solidIdBadge,
+                color: vividNavy,
+                size: 20,
+              ),
+              hintText: "First Name",
+              fillColor: baseNavy,
+            )),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(14.0),
+            child: TextFormField(
+                decoration: const InputDecoration(
+              prefixIcon: Icon(
+                FontAwesomeIcons.solidIdBadge,
+                color: vividNavy,
+                size: 20,
+              ),
+              hintText: "Last Name",
+              fillColor: baseNavy,
+            )),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(14.0),
+            child: TextFormField(
+                decoration: const InputDecoration(
+              prefixIcon: Icon(
+                FontAwesomeIcons.user,
+                color: vividNavy,
+                size: 20,
+              ),
+              hintText: "anandjha.dev",
+              fillColor: baseNavy,
+            )),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(14.0),
+            child: TextFormField(
+                decoration: const InputDecoration(
+              prefixIcon: Icon(
+                FontAwesomeIcons.solidEnvelope,
+                color: vividNavy,
+                size: 20,
+              ),
+              hintText: "chitchat@chat.com",
+              fillColor: baseNavy,
+            )),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(14.0),
+            child: TextFormField(
+              decoration: const InputDecoration(
+                prefixIcon: Icon(
+                  FontAwesomeIcons.phone,
+                  size: 20,
+                  color: vividNavy,
+                ),
+                hintText: "+91 7812345678",
+                fillColor: baseNavy,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(14.0),
+            child: TextFormField(
+              decoration: const InputDecoration(
+                prefixIcon: Icon(
+                  FontAwesomeIcons.lock,
+                  size: 20,
+                  color: vividNavy,
+                ),
+                hintText: "Password",
+                fillColor: baseNavy,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(14.0),
+            child: TextFormField(
+              decoration: const InputDecoration(
+                prefixIcon: Icon(
+                  FontAwesomeIcons.lock,
+                  size: 20,
+                  color: vividNavy,
+                ),
+                hintText: "Re-type Password",
+                fillColor: baseNavy,
+              ),
+            ),
+          ),
 
-        const SizedBox(
-          height: 40,
-        ),
-        //Account Create
-        ElevatedButton.icon(
-          onPressed: () {},
-          icon: Icon(Icons.add),
-          label: Text("Create New Account"),
-          style: const ButtonStyle(
-              backgroundColor: MaterialStatePropertyAll(baseNavy),
-              foregroundColor: MaterialStatePropertyAll(black)),
-        )
-      ],
+          const SizedBox(
+            height: 40,
+          ),
+          //Account Create
+          ElevatedButton.icon(
+            onPressed: () {},
+            icon: const Icon(FontAwesomeIcons.check),
+            label: const Text("Create New Account"),
+            style: const ButtonStyle(
+                backgroundColor: MaterialStatePropertyAll(baseNavy),
+                foregroundColor: MaterialStatePropertyAll(black)),
+          )
+        ],
+      ),
     ),
   );
 }
